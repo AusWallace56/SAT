@@ -11,10 +11,8 @@ namespace SAT.MVC.UI.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
 
             return View();
         }
