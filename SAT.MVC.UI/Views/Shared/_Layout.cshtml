@@ -31,6 +31,19 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","Home")">Home</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("About","Home")">About</a></li>
+                    <li>
+                        @Html.ActionLink("Account", "Login", "Account")
+                        <ul class="submenu">
+                            <li>
+                                @Html.Partial("_LoginPartial")
+                            </li>
+                        </ul>
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","Courses")">Courses</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","StudentStatus")">Student Status</a></li>
+                    }
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Products</a></li>
                     <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Store</a></li>
                 </ul>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SAT.Data.EF.Course>
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.AntiForgeryToken()
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        string path = "noImage.png";
+        if (item.CourseImage != null)
+        {
+            path = item.CourseImage;
+        }
+
+        <div class="card w-auto">
+            <img src="~/Content/assets/img/@path" alt="@item.CourseName" style="width:150px;" />
+            <div class="container">
+                <h4>@item.CourseName</h4>
+                <h4>@item.CreditHours</h4>
+                <p>@item.Description</p>
+            </div>
+        </div>
+
+        @Html.ActionLink("Edit", "Edit", new { id = item.CourseID })
+        @Html.ActionLink("Details", "Details", new { id = item.CourseID })
+        @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
+
+    }
+</div>

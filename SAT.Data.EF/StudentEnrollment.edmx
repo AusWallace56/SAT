@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="StudentEnrollmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="StudentEnrollmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -13,6 +13,7 @@
           <Property Name="CourseName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="CreditHours" Type="int" Nullable="false" />
+          <Property Name="CourseImage" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Enrollments">
           <Key>
@@ -149,8 +150,7 @@
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StudentEnrollmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -163,6 +163,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CreditHours" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ScheduledClasses" Relationship="Self.FK_ScheduledClasses_Courses" FromRole="Courses" ToRole="ScheduledClasses" />
+          <Property Name="CourseImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Enrollment">
           <Key>
@@ -317,6 +318,7 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="StudentEnrollmentModel.Course">
               <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="CourseImage" ColumnName="CourseImage" />
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
                 <ScalarProperty Name="CourseName" ColumnName="CourseName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

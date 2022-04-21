@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
 * Start Bootstrap - Business Casual v7.0.8 (https://startbootstrap.com/theme/business-casual)
 * Copyright 2013-2022 Start Bootstrap
@@ -11288,7 +11288,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/bg.jpg");
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/FunksMusicBackground.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;

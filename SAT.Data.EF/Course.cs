@@ -24,6 +24,7 @@ namespace SAT.Data.EF
         public string CourseName { get; set; }
         public string Description { get; set; }
         public int CreditHours { get; set; }
+        public string CourseImage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ScheduledClass> ScheduledClasses { get; set; }
