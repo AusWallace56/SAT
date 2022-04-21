@@ -213,8 +213,14 @@
     <Content Include="Content\assets\img\about.jpg" />
     <Content Include="Content\assets\img\bg.jpg" />
     <Content Include="Content\assets\img\FunksMusicBackground.jpg" />
+    <Content Include="Content\assets\img\guitaradvanced.jpg" />
+    <Content Include="Content\assets\img\guitarbeginner.jpg" />
+    <Content Include="Content\assets\img\guitarintermediate.jpg" />
     <Content Include="Content\assets\img\intro.jpg" />
     <Content Include="Content\assets\img\noImage.png" />
+    <Content Include="Content\assets\img\pianoadvanced.jpg" />
+    <Content Include="Content\assets\img\pianobeginner.jpg" />
+    <Content Include="Content\assets\img\pianointermediate.jpg" />
     <Content Include="Content\assets\img\PianoWithMusic.jpg" />
     <Content Include="Content\assets\img\products-01.jpg" />
     <Content Include="Content\assets\img\products-02.jpg" />

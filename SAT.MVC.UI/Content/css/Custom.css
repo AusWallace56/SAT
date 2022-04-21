@@ -11,3 +11,7 @@
 .container {
     padding: 2px 16px;
 }
+
+.courseDetails dt, dd {
+    color: #f6e1c5;
+}

@@ -1,15 +1,15 @@
 ﻿@model SAT.Data.EF.Course
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Course Details";
 }
 
-<h2>Details</h2>
+<h2 style="color:#f6e1c5; text-align:center;">@ViewBag.Title</h2>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
+<div style="text-align:center;">
+    @*<h4>Course</h4>
+    <hr />*@
+    <dl class="dl-horizontal courseDetails">
         <dt>
             @Html.DisplayNameFor(model => model.CourseName)
         </dt>
