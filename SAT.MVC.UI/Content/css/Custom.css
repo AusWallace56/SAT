@@ -41,3 +41,30 @@
     color: #f6e1c5;
     text-align: center;
 }
+
+.nav-itemDD {
+    overflow: hidden;
+    font-family: inherit;
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 800;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(47, 23, 15, 0.9);
+    list-style-type: none;
+}
+
+.content {
+    float: none;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-itemDD:hover .drop {
+    display:block;
+}
