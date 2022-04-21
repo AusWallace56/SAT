@@ -45,13 +45,13 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","Courses")">Courses</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","StudentStatus")">Student Status</a></li>
                     }
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Products</a></li>
-                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Store</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","Enrollments")">Enrollment</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="@Url.Action("Index","ScheduledClasses")">Classes</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div id="main">
+    <div id="main" style="padding:2em;">
         @RenderBody()
     </div>
     <footer class="footer text-faded text-center py-5">

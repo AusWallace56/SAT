@@ -15,3 +15,8 @@
 .courseDetails dt, dd {
     color: #f6e1c5;
 }
+
+.statusTable {
+    background-color: #f6e1c5;
+    text-align: center;
+}

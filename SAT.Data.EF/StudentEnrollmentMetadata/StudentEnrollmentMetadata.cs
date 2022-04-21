@@ -77,7 +77,7 @@ namespace SAT.Data.EF/*.StudentEnrollmentMetadata*/
 
         [Required(ErrorMessage = "Class Time is required")]
         [Display(Name = "Class Time")]
-        [DisplayFormat(DataFormatString ="{0:00}")]
+        [DisplayFormat(DataFormatString ="{0:dd}")]
         public System.TimeSpan ClassTime { get; set; }
 
         [Required(ErrorMessage ="Scheduled Class Status is Required")]
