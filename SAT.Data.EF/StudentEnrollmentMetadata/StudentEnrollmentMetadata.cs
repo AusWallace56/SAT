@@ -12,8 +12,8 @@ namespace SAT.Data.EF/*.StudentEnrollmentMetadata*/
         public class CourseMetadata
         {
             [Required(ErrorMessage ="Course Name is required")]
-            [Display(Name ="Course Name")]
             [StringLength(50, ErrorMessage ="Must be 50 characters or less")]
+            [Display(Name ="Course Name")]
             public string CourseName { get; set; }
 
             [Required(ErrorMessage ="Description is required")]
@@ -77,7 +77,7 @@ namespace SAT.Data.EF/*.StudentEnrollmentMetadata*/
 
         [Required(ErrorMessage = "Class Time is required")]
         [Display(Name = "Class Time")]
-        [DisplayFormat(DataFormatString ="{0:dd}")]
+        [DisplayFormat(DataFormatString ="{0:h\\:mm}")]
         public System.TimeSpan ClassTime { get; set; }
 
         [Required(ErrorMessage ="Scheduled Class Status is Required")]
@@ -86,7 +86,13 @@ namespace SAT.Data.EF/*.StudentEnrollmentMetadata*/
     }
 
     [MetadataType(typeof(ScheduledClassMetadata))]
-    public partial class ScheduledClass { }
+    public partial class ScheduledClass
+    {
+        public string ClassInfo
+        {
+            get { return $"Start Date: {StartDate:d} Course: {Cours.CourseName}"; }
+        }
+    }
 
     public class ScheduledClassStatusMetadata
     {

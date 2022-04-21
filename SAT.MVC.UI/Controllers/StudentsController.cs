@@ -10,117 +10,112 @@ using SAT.Data.EF;
 
 namespace SAT.MVC.UI.Controllers
 {
-    [Authorize(Roles = "Admin, Scheduling")]
-    public class EnrollmentsController : Controller
+    public class StudentsController : Controller
     {
         private StudentEnrollmentEntities db = new StudentEnrollmentEntities();
 
-        // GET: Enrollments
+        // GET: Students
         public ActionResult Index()
         {
-            var enrollments = db.Enrollments.Include(e => e.ScheduledClass).Include(e => e.Student);
-            return View(enrollments.ToList());
+            var students = db.Students.Include(s => s.StudentStatus);
+            return View(students.ToList());
         }
 
-        // GET: Enrollments/Details/5
+        // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Enrollment enrollment = db.Enrollments.Find(id);
-            if (enrollment == null)
+            Student student = db.Students.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(enrollment);
+            return View(student);
         }
 
-        // GET: Enrollments/Create
+        // GET: Students/Create
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassID = new SelectList(db.ScheduledClasses, "ClassInfo", "ClassInfo");
-            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName");
+            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName");
             return View();
         }
 
-        // POST: Enrollments/Create
+        // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentID,StudentID,ScheduledClassID,EnrollmentDate")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName,Email,SSID")] Student student)
         {
             if (ModelState.IsValid)
             {
-                db.Enrollments.Add(enrollment);
+                db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ScheduledClassID = new SelectList(db.ScheduledClasses, "ScheduledClassID", "InstructorName", enrollment.ScheduledClassID);
-            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentID);
-            return View(enrollment);
+            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
+            return View(student);
         }
 
-        // GET: Enrollments/Edit/5
+        // GET: Students/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Enrollment enrollment = db.Enrollments.Find(id);
-            if (enrollment == null)
+            Student student = db.Students.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ScheduledClassID = new SelectList(db.ScheduledClasses, "ScheduledClassID", "InstructorName", enrollment.ScheduledClassID);
-            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentID);
-            return View(enrollment);
+            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
+            return View(student);
         }
 
-        // POST: Enrollments/Edit/5
+        // POST: Students/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentID,StudentID,ScheduledClassID,EnrollmentDate")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "StudentID,FirstName,LastName,Email,SSID")] Student student)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(enrollment).State = EntityState.Modified;
+                db.Entry(student).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ScheduledClassID = new SelectList(db.ScheduledClasses, "ScheduledClassID", "InstructorName", enrollment.ScheduledClassID);
-            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentID);
-            return View(enrollment);
+            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
+            return View(student);
         }
 
-        // GET: Enrollments/Delete/5
+        // GET: Students/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Enrollment enrollment = db.Enrollments.Find(id);
-            if (enrollment == null)
+            Student student = db.Students.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(enrollment);
+            return View(student);
         }
 
-        // POST: Enrollments/Delete/5
+        // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Enrollment enrollment = db.Enrollments.Find(id);
-            db.Enrollments.Remove(enrollment);
+            Student student = db.Students.Find(id);
+            db.Students.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -40,6 +40,8 @@ namespace SAT.MVC.UI.Controllers
         // GET: Courses/Create
         public ActionResult Create()
         {
+            ViewBag.CourseName = new SelectList(db.Courses, "CourseName");
+            
             return View();
         }
 

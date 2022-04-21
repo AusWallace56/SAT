@@ -1,24 +1,24 @@
 ﻿@model IEnumerable<SAT.Data.EF.Enrollment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Enrollments";
 }
 
-<h2>Index</h2>
+<h2 style="color:#f6e1c5">@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table enrollmentsTable">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
+            Enrollment Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
+            Course
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Student.FirstName)
+            Student
         </th>
         <th></th>
     </tr>
@@ -29,10 +29,10 @@
             @Html.DisplayFor(modelItem => item.EnrollmentDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ScheduledClass.InstructorName)
+            @Html.DisplayFor(modelItem => item.ScheduledClass.Cours.CourseName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Student.FirstName)
+            @Html.DisplayFor(modelItem => item.Student.FullName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentID }) |

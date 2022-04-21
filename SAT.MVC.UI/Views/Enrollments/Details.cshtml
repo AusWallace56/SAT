@@ -1,21 +1,28 @@
 ﻿@model SAT.Data.EF.Enrollment
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Enrollment Details";
 }
 
-<h2>Details</h2>
+<h2 style="color:#f6e1c5; text-align:center;">@ViewBag.Title</h2>
 
 <div>
-    <h4>Enrollment</h4>
-    <hr />
-    <dl class="dl-horizontal">
+
+    <dl class="dl-horizontal enrollmentsDetails">
         <dt>
             @Html.DisplayNameFor(model => model.EnrollmentDate)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+
+        <dt>
+            Course
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledClass.Cours.CourseName)
         </dd>
 
         <dt>
@@ -27,11 +34,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Student.FirstName)
+            Student
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Student.FirstName)
+            @Html.DisplayFor(model => model.Student.FullName)
         </dd>
 
     </dl>

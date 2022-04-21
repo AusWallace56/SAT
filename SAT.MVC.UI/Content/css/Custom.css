@@ -14,9 +14,30 @@
 
 .courseDetails dt, dd {
     color: #f6e1c5;
+    text-align: center;
 }
 
 .statusTable {
     background-color: #f6e1c5;
+    text-align: center;
+}
+
+.scheduledClassTable {
+    background-color: #f6e1c5;
+    text-align: center;
+}
+
+.scheduledClassDetails dd, dt {
+    color: #f6e1c5;
+    text-align: center;
+}
+
+.enrollmentsTable {
+    background-color: #f6e1c5;
+    text-align: center;
+}
+
+.enrollmentsDetails dd, dt {
+    color: #f6e1c5;
     text-align: center;
 }
