@@ -253,6 +253,8 @@
     <Content Include="_Archive\products.html" />
     <Content Include="_Archive\store.html" />
     <Content Include="configs\AppSecretKeys.config" />
+    <Content Include="configs\connections.config" />
+    <Content Include="Content\SummaryExpectationsSAT.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -340,10 +342,10 @@
     <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\EmailConfirmation.cshtml" />
+    <Content Include="Views\StudentStatus\TilesIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="configs\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
