@@ -21,7 +21,7 @@ namespace SAT.Data.EF/*.StudentEnrollmentMetadata*/
             public string Description { get; set; }
 
             [Required(ErrorMessage="Credit Hours is required")]
-            [Display(Name = "Credit Hours")]
+            [Display(Name = "Credit Hour(s)")]
             public int CreditHours { get; set; }
 
             [DisplayFormat(NullDisplayText = "[-N/A-]")]
