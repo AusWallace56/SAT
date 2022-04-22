@@ -50,7 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>StudentEnrollment.tt</DependentUpon>
+    </Compile>
     <Compile Include="Course.cs">
+      <DependentUpon>StudentEnrollment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>StudentEnrollment.tt</DependentUpon>
     </Compile>
     <Compile Include="Enrollment.cs">

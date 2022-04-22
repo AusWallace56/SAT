@@ -31,5 +31,7 @@ namespace SAT.Data.EF
         public virtual DbSet<ScheduledClassStatus> ScheduledClassStatuses { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<StudentStatus> StudentStatuses { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     }
 }

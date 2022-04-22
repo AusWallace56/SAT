@@ -253,8 +253,8 @@
     <Content Include="_Archive\products.html" />
     <Content Include="_Archive\store.html" />
     <Content Include="configs\AppSecretKeys.config" />
-    <Content Include="configs\connections.config" />
     <Content Include="Content\SummaryExpectationsSAT.pdf" />
+    <Content Include="configs\connections.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
